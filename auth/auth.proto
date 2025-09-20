@@ -58,5 +58,5 @@ message GetUserTeamRequest {
 
 message GetUserTeamResponse {
     string user_team_id = 1;
-    boolean success = 2;
+    bool success = 2;
 }
