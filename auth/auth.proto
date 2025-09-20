@@ -38,18 +38,6 @@ message FileStatusResponse {
 }
 
 /*
-    ** USER INFORMATION **
-*/
-message UserInformationRequest {
-  string user_id = 1;
-}
-
-message UserInformationResponse {
-  string user_id = 1;
-  string team_id = 2;
-}
-
-/*
     ** USER TEAMS **
 */
 message GetUserTeamRequest {
