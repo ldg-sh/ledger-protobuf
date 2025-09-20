@@ -41,7 +41,7 @@ message FileStatusResponse {
     ** USER TEAMS **
 */
 message GetUserTeamRequest {
-    string user_token = 1;
+    string user_id = 1;
 }
 
 message GetUserTeamResponse {
