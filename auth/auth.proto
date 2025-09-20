@@ -5,7 +5,6 @@ service Authentication {
   rpc ValidateAuthentication (ValidationRequest) returns (ValidationResponse);
   rpc GetFileStatus (FileStatusRequest) returns (FileStatusResponse);
   rpc GetUserTeam (GetUserTeamRequest) returns (GetUserTeamResponse);
-  rpc GetUserInformation (UserInformationRequest) returns (UserInformationResponse);
 }
 
 /*
