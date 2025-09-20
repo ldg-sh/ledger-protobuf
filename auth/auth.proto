@@ -4,9 +4,13 @@ package auth;
 service Authentication {
   rpc ValidateAuthentication (ValidationRequest) returns (ValidationResponse);
   rpc GetFileStatus (FileStatusRequest) returns (FileStatusResponse);
+  rpc GetUserTeam (GetUserTeamRequest) returns (GetUserTeamResponse);
   rpc GetUserInformation (UserInformationRequest) returns (UserInformationResponse);
 }
 
+/*
+    ** AUTHENTICATION VALIDATION **
+*/
 message ValidationRequest {
   string token = 1;
 }
@@ -16,6 +20,9 @@ message ValidationResponse {
   string message = 2;
 }
 
+/*
+    ** FILE STATUS **
+*/
 message FileStatusRequest {
   string file_id = 1;
 }
@@ -30,6 +37,9 @@ message FileStatusResponse {
   string message = 2;
 }
 
+/*
+    ** USER INFORMATION **
+*/
 message UserInformationRequest {
   string user_id = 1;
 }
@@ -37,4 +47,16 @@ message UserInformationRequest {
 message UserInformationResponse {
   string user_id = 1;
   string team_id = 2;
+}
+
+/*
+    ** USER TEAMS **
+*/
+message GetUserTeamRequest {
+    string user_token = 1;
+}
+
+message GetUserTeamResponse {
+    string user_team_id = 1;
+    boolean success = 2;
 }
