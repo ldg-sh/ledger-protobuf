@@ -3,13 +3,9 @@ package auth;
 
 service Authentication {
   rpc ValidateAuthentication (ValidationRequest) returns (ValidationResponse);
-  rpc GetFileStatus (FileStatusRequest) returns (FileStatusResponse);
   rpc GetUserTeam (GetUserTeamRequest) returns (GetUserTeamResponse);
 }
 
-/*
-    ** AUTHENTICATION VALIDATION **
-*/
 message ValidationRequest {
   string token = 1;
 }
@@ -20,31 +16,11 @@ message ValidationResponse {
   string message = 3;
 }
 
-/*
-    ** FILE STATUS **
-*/
-message FileStatusRequest {
-  string file_id = 1;
-}
-
-message FileStatusResponse {
-  enum Status {
-    UPLOADING = 0;
-    COMPLETED = 1;
-  }
-
-  Status status = 1;
-  string message = 2;
-}
-
-/*
-    ** USER TEAMS **
-*/
 message GetUserTeamRequest {
     string user_id = 1;
 }
 
 message GetUserTeamResponse {
-    string user_team_id = 1;
+    string team_id = 1;
     bool success = 2;
 }
