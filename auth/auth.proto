@@ -3,7 +3,6 @@ package auth;
 
 service Authentication {
   rpc ValidateAuthentication (ValidationRequest) returns (ValidationResponse);
-  rpc GetUserTeam (GetUserTeamRequest) returns (GetUserTeamResponse);
 }
 
 message ValidationRequest {
@@ -14,13 +13,4 @@ message ValidationResponse {
   bool is_valid = 1;
   string user_id = 2;
   string message = 3;
-}
-
-message GetUserTeamRequest {
-    string user_id = 1;
-}
-
-message GetUserTeamResponse {
-    repeated string team_id = 1;
-    bool success = 2;
 }
